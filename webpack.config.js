@@ -48,7 +48,11 @@ module.exports = {
           name: '[name].[ext]',
           publicPath: '../img/'
         },
-      }
+      },
+      {
+        test: /\.pug$/,
+        use: ['pug-loader']
+  },
     ]
   },
   optimization: {
@@ -62,5 +66,8 @@ module.exports = {
       filename: './css/[name].bundle.css',
     }),
     new HtmlWebpackPlugin({ template: 'index.html' }),
-  ]
+  ],
+  node: {
+    fs: 'empty'
+  }
 };
