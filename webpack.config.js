@@ -10,7 +10,7 @@ module.exports = {
     contact: './src/js/contact.js'
   }, 
   output: {
-    filename: '[name].bundle.js',
+    filename: './js/[name].bundle.js',
     path: path.resolve(__dirname, './dist/')
   },
   watch: true,
@@ -50,6 +50,11 @@ module.exports = {
         },
       }
     ]
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),
