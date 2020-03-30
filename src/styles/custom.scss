@@ -6,4 +6,9 @@ body {
     color: $primary;
     font-size: $h1-size;
     }
+
+    .header {
+        background-image: url("../img/test.jpg");
+        background-repeat: no-repeat;
+    }
 }

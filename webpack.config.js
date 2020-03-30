@@ -1,17 +1,17 @@
 const path = require('path');
-const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+  mode: 'development',
   entry: {
     main: './src/js/index.js',
     contact: './src/js/contact.js'
   }, 
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, './dist/js'),
+    path: path.resolve(__dirname, './dist/')
   },
   watch: true,
   module: {
@@ -39,13 +39,23 @@ module.exports = {
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader']
         })
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'img/',
+          name: '[name].[ext]',
+          publicPath: '../img/'
+        },
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new ExtractTextPlugin({
-      filename: '[name].bundle.css',
+      filename: './css/[name].bundle.css',
     }),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({ template: 'index.html' }),
   ]
 };
