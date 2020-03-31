@@ -2,20 +2,33 @@ $primary: #3082d5;
 $h1-size: 120px;
 
 body {
-    h1 {
-    color: $primary;
-    font-size: $h1-size;
+    #menu {
+        background: #dbdbdb;
+        padding: 15px 0 0 0;
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            margin-bottom: 0;
+            li {
+                width: 100px;
+                border: 1px solid #cecece;
+                padding: 10px;
+                background: #fff;
+                margin: 0 20px;
+            }
+        }
     }
-
-    .header {
-        background-image: url("../img/test.jpg");
-        background-repeat: no-repeat;
+    #app {
+        padding: 60px 0;
     }
-    .new-block {
-        background: #5a6268;
-
-        h2 {
-            color: #1e7e34;
+    #footer {
+        background: #424242;
+        padding: 10px;
+        color: #fff;
+        p {
+            margin-bottom: 0;
         }
     }
 }
