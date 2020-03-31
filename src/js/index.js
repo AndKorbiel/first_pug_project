@@ -5,7 +5,7 @@ const app = document.getElementById('app');
 const list = require('../templates/list.pug');
 
 const newAnswer = {a : "fine"}
-const values = ['and', 'xand']
+const values = ['and', 'xand', 'zzzs']
 
 app.innerHTML = template();
 app.innerHTML += list({values})
